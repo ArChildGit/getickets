@@ -8,6 +8,11 @@ import {
   ShoppingCartOutlined,
   UnorderedListOutlined,
   DashboardOutlined,
+  UserOutlined,
+  FileTextOutlined,
+  PlayCircleOutlined,
+  TeamOutlined,
+  AppstoreAddOutlined,
 } from "@ant-design/icons";
 
 function Sidenav({ color }) {
@@ -18,84 +23,56 @@ function Sidenav({ color }) {
     setSelectedKey(key);
   };
 
+  const roles = JSON.parse(sessionStorage.getItem('UserProfile'))?.roles || "Default_";
+
   return (
     <div className="sidenav-container">
-      <Card style={{ textAlign: "center" }}>
-        <div style={{ display: "flex", alignItems: "center" }}>
+      <Card style={{ textAlign: "center", backgroundColor: "#ffffff", color: "#001529", padding: "16px" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
           <img
             src={gaventLogo}
             alt="GETicket Logo"
-            style={{ width: "32px", height: "32px", marginRight: "8px" }} // Sesuaikan ukuran gambar dan jarak
+            style={{
+              width: "40px", height: "40px", marginRight: "8px", borderRadius: "50%", objectFit: "cover"
+            }}
           />
-          <span>GETicket</span>
+          <span style={{ fontSize: "18px", fontWeight: "bold" }}>GETicket</span>
         </div>
       </Card>
+
       <Menu
         theme="light"
         mode="inline"
         selectedKeys={[selectedKey]}
         onSelect={({ key }) => handleMenuKey(key)}
-        inlineCollapsed={collapsed} // Menambahkan pengaturan collapse
+        inlineCollapsed={collapsed}
+        style={{
+          backgroundColor: "#ffffff",
+          color: "#001529",
+          border: "none"
+        }}
       >
-        {/* Menambahkan SubMenu untuk Dashboard */}
-        <Menu.SubMenu
-          key="main"
-          title={
-            <span>
-              <DashboardOutlined />
-              <span className="label">MAIN</span>
-            </span>
-          }
-        >
-          <Menu.Item key="/dashboard">
-            <NavLink to="/dashboard">Dashboard</NavLink>
+        <Menu.Item key="/profile" icon={<UserOutlined />}>
+          <NavLink to="/profile">Profile</NavLink>
+        </Menu.Item>
+        <Menu.Item key="/dashboard" icon={<DashboardOutlined />}>
+          <NavLink to="/dashboard">Dashboard</NavLink>
+        </Menu.Item>
+        <Menu.Item key="/my-ticket" icon={<FileTextOutlined />}>
+          <NavLink to="/my-ticket">My Tickets</NavLink>
+        </Menu.Item>
+        {/* <Menu.Item key="/uts" icon={<PlayCircleOutlined />}>
+          <NavLink to="/uts">Playlist</NavLink>
+        </Menu.Item> */}
+        <Menu.Item key="/my-committee" icon={<TeamOutlined />}>
+          <NavLink to="/my-committee">Events I'm Part of</NavLink>
+        </Menu.Item>
+        {roles === "admin" && (
+          <Menu.Item key="/admin-event-list" icon={<AppstoreAddOutlined />}>
+            <NavLink to="/admin-event-list">Admin Event List</NavLink>
           </Menu.Item>
-          <Menu.Item key="/profile">
-            <NavLink to="/profile">Profile</NavLink>
-          </Menu.Item>
-          <Menu.Item key="/details">
-            <NavLink to="/details">Details</NavLink>
-          </Menu.Item>
-          <Menu.Item key="/uts">
-            <NavLink to="/uts">Ujian Tengah Semester</NavLink>
-          </Menu.Item>
-        </Menu.SubMenu>
-
-        <Menu.SubMenu
-          key="organizer"
-          title={
-            <span>
-              <DashboardOutlined />
-              <span className="label">Organizer</span>
-            </span>
-          }
-        >
-          <Menu.Item key="/manage">
-            <NavLink to="/manage">Manage</NavLink>
-          </Menu.Item>
-          <Menu.Item key="/invitation">
-            <NavLink to="/invitation">Invitation</NavLink>
-          </Menu.Item>
-        </Menu.SubMenu>
-
-        <Menu.SubMenu
-          key="admin"
-          title={
-            <span>
-              <DashboardOutlined />
-              <span className="label">ADMIN</span>
-            </span>
-          }
-        >
-          <Menu.Item key="/manage">
-            <NavLink to="/manage">Manage</NavLink>
-          </Menu.Item>
-          <Menu.Item key="/invitation">
-            <NavLink to="/invitation">Invitation</NavLink>
-          </Menu.Item>
-        </Menu.SubMenu>
+        )}
       </Menu>
-          
     </div>
   );
 }

@@ -1,0 +1,155 @@
+/* General Styling */
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for MyTicket */
+.MyTicket {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Title */
+.MyTicket h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333333;
+  text-align: center;
+}
+
+/* Filters Section */
+.ant-space {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.ant-input-search {
+  width: 250px;
+}
+
+.ant-select {
+  width: 150px;
+}
+
+.ant-picker {
+  min-width: 250px;
+}
+
+.ant-input-group-compact {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Tabs Styling */
+.ant-tabs-tab {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #1677ff !important;
+}
+
+.ant-tabs-ink-bar {
+  background-color: #1677ff;
+}
+
+/* Table Styling */
+.ant-table {
+  margin-top: 20px;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.ant-table-tbody > tr > td {
+  text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .ant-space {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .ant-input-search,
+  .ant-select,
+  .ant-picker {
+    width: 100%;
+  }
+}
+
+/* Kolom Product */
+.product-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-code {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+}
+
+.product-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product-location,
+.product-organizer {
+  font-size: 14px;
+  color: #555555;
+  margin: 0;
+}
+
+/* Gradient button with outlined style */
+.gradient-outlined-button {
+  /* border: 1px solid transparent; */
+  background: linear-gradient(white, white) padding-box, 
+              linear-gradient(45deg, #1677ff, #00d4ff) border-box;
+  border-radius: 24px;
+  color: #1677ff;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.gradient-outlined-button:hover {
+  color: #ffffff;
+  background: linear-gradient(45deg, #1677ff, #00d4ff);
+  border-color: #00d4ff;
+}
+
+.gradient-outlined-button:focus {
+  box-shadow: 0 0 8px rgba(22, 119, 255, 0.6);
+}

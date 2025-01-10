@@ -33,52 +33,50 @@ function MainLayout({ children }) {
         open={visible}
         width={250}
       >
+        <Layout
+          className={`layout - dashboard ${
+            pathname === "rtl" ? "layout-dashboard-rtl" : ""
+          }`}
+        >
         <Sider
+          breakpoint="lg"
+          collapsedWidth="0"
+          trigger={null}
           width={250}
           theme="light"
           style={{ background: sidenavColor }}
         >
           <Sidenav color={sidenavColor} />
         </Sider>
-      </Drawer>
+    </Layout>
+      </Drawer >
 
-      <Sider
-        breakpoint="lg"
-        collapsedWidth="0"
-        trigger={null}
-        width={250}
-        theme="light"
-        style={{ background: sidenavColor }}
-      >
-        <Sidenav color={sidenavColor} />
-      </Sider>
-
-      <Layout>
-        {fixed ? (
-          <Affix>
-            <AntHeader>
-              <Header
-                onPress={openDrawer}
-                handleSidenavColor={handleSidenavColor}
-                handleFixedNavbar={handleFixedNavbar}
-              />
-            </AntHeader>
-          </Affix>
-        ) : (
+    <Layout>
+      {fixed ? (
+        <Affix>
           <AntHeader>
             <Header
               onPress={openDrawer}
-              name={pathname}
-              subName={pathname}
               handleSidenavColor={handleSidenavColor}
               handleFixedNavbar={handleFixedNavbar}
             />
           </AntHeader>
-        )}
-        <Content style={{ padding: '24px' }}>{children}</Content>
-        <Footer />
-      </Layout>
+        </Affix>
+      ) : (
+        <AntHeader>
+          <Header
+            onPress={openDrawer}
+            name={pathname}
+            subName={pathname}
+            handleSidenavColor={handleSidenavColor}
+            handleFixedNavbar={handleFixedNavbar}
+          />
+        </AntHeader>
+      )}
+      <Content>{children}</Content>
+      <Footer />
     </Layout>
+    </Layout >
   );
 }
 

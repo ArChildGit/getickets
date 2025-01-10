@@ -1,0 +1,164 @@
+.admin-event-list {
+  padding: 24px;
+  min-height: 100vh;
+  background-color: #E0E3E8;
+}
+
+.admin-event-list-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.admin-event-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.event-list-container {
+  margin-top: 24px;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.event-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-card-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-card-details {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.pagination-container {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-event-card, .ticket-package-card {
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-event-card label,
+.ticket-package-card label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.edit-event-card button,
+.ticket-package-card button {
+  height: 48px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.event-card-image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.event-card-image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.event-card-date {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  z-index: 1;
+}
+.event-card-title {
+  font-size: clamp(1.5rem, 5vw, 1.5rem); /* Responsive font size */
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 16px;
+  text-align: left;
+  text-transform: capitalize;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  font-family: 'Roboto', sans-serif;
+  padding: 8px 12px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, color 0.3s ease;
+  word-break: break-word;
+  display: inline-block;
+  width: 100%;
+  white-space: normal; /* Ensure long text wraps */
+}
+
+
+.event-card-details {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Memberikan jarak antar elemen */
+}
+
+.event-card-item {
+  display: flex;
+  align-items: flex-start; /* Ikon dan teks sejajar secara vertikal */
+  gap: 8px; /* Jarak antara ikon dan teks */
+}
+
+.event-card-icon {
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.event-card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Jumlah baris maksimal yang ditampilkan */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Menambahkan "..." jika teks terlalu panjang */
+  white-space: normal;
+}
+
+.event-card-description {
+  max-height: none; /* Make sure description container can grow as needed */
+}
+.event-card-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+}

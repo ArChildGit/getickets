@@ -1,0 +1,144 @@
+/* Gaya untuk gambar dengan efek hover */
+.image-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-hover-effect:hover {
+  transform: scale(1.05); /* Efek zoom sedikit */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+/* Gaya untuk card */
+.criclebox {
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.purchase-modal .ant-modal-header {
+  background-color: #EEEEEE; 
+  color: #508C9B; /* Tambahkan tanda # untuk kode warna */
+  font-size: 20px; /* Atur ukuran font */
+  font-weight: bold; /* Tambahkan untuk menebalkan teks */
+  padding: 10px; /* Opsional: tambahkan jarak padding */
+}
+
+.purchase-modal .ant-modal-title {
+color: #003366;
+}
+
+.purchase-modal .ant-btn-primary {
+background-color: #64b7ff; 
+border-color: #64b7ff;
+color: #ffffff; 
+}
+
+.purchase-modal .ant-btn-default {
+background-color: #ff4444; 
+border-color: #ff0000;
+color: #ffffff; 
+}
+
+.confirm-message {
+color: #003366;
+font-weight: bold;
+}
+
+.confirm-price {
+color: #201E43;
+font-weight: bold;
+}
+
+.confirm-date {
+color: #201E43;
+font-style: italic;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+/* Gaya untuk kolom dan baris */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.col {
+  flex: 1;
+}
+
+/* Gaya untuk teks event */
+.event-title {
+  font-weight: bold;
+  font-size: 39px;
+  color: #2c3e50;
+}
+
+.event-description {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Gaya untuk harga */
+.event-price {
+  font-weight: bold;
+  color: #000000;
+}
+
+.manage-text {
+  font-size: 17px;
+}
+
+/* Gaya untuk tombol 'Buy Now' */
+.buy-button {
+  margin-top: 20px;
+  padding: 14px;
+  background: #3498db;
+  border-color: #2980b9;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.buy-button:hover {
+  background: #2980b9;
+  border-color: #3498db;
+}
+
+/* Divider styling */
+.ant-divider {
+  margin: 20px 0;
+  border-top: 1px solid #ccc;
+}
+
+/* Modal Styling */
+.purchase-modal {
+  max-width: 500px;
+}
+
+.image-modal {
+  max-width: 800px;
+}
+
+.ant-modal-header {
+  background-color: #f0f2f5;
+  padding: 16px;
+}
+
+.ant-modal-footer {
+  text-align: center;
+}
+
+/* Styling Input for Quantity */
+.quantity-input {
+  width: 100px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
